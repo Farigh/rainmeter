@@ -78,13 +78,21 @@ W=50
 PreserveAspectRatio=1
 ImageName=Fixed-disk.png
 
-[MeterImageStyle2]
+[MeterRemovableImageStyle]
 X=10
 Y=20r
 H=50
 W=50
 PreserveAspectRatio=1
 ImageName=Removable-disk.png
+
+[MeterNetworkImageStyle]
+X=10
+Y=20r
+H=50
+W=50
+PreserveAspectRatio=1
+ImageName=Network-disk.png
 
 [MeterNoStyle]
 X=0
@@ -194,10 +202,13 @@ UpdateDivider=5
 IgnoreRemovable=0
 ; Removable drive
 IfCondition=MeasureHDD${drive_nb}Type = 3
-IfTrueAction=[!SetOption MeterHDD${drive_nb}Image MeterStyle MeterImageStyle2]
+IfTrueAction=[!SetOption MeterHDD${drive_nb}Image MeterStyle MeterRemovableImageStyle]
 ; Fixed drive
 IfCondition2=MeasureHDD${drive_nb}Type = 4
 IfTrueAction2=[!SetOption MeterHDD${drive_nb}Image MeterStyle MeterImageStyle]
+; Network drive
+IfCondition3=MeasureHDD${drive_nb}Type = 5
+IfTrueAction3=[!SetOption MeterHDD${drive_nb}Image MeterStyle MeterNetworkImageStyle]
 
 ; Manage visibility
 [HDD${drive_nb}Label]
