@@ -208,15 +208,15 @@ Formula=[MeasureHDD${drive_nb}Label]
 Measure=Calc
 Formula=(MeasureHDD${drive_nb}Total > 0 || HDD${drive_nb}Label > 0 ? 1 : 0)
 IfBelowValue=1
-IfBelowAction=!execute [!RainmeterHideMeterGroup HDD${drive_nb}][!SetOption MeterHDD${drive_nb}Image MeterStyle MeterNoStyle][!SetOption MeterHDD${drive_nb}Label MeterStyle MeterNoStyle]
+IfBelowAction=[!RainmeterHideMeterGroup HDD${drive_nb}][!SetOption MeterHDD${drive_nb}Image MeterStyle MeterNoStyle][!SetOption MeterHDD${drive_nb}Label MeterStyle MeterNoStyle]
 IfAboveValue=0
-IfAboveAction=!execute [!RainmeterShowMeterGroup HDD${drive_nb}][!SetOption MeterHDD${drive_nb}Label MeterStyle MeterLabelStyle]
+IfAboveAction=[!RainmeterShowMeterGroup HDD${drive_nb}][!SetOption MeterHDD${drive_nb}Label MeterStyle MeterLabelStyle]
 
 ; Display settings
 [MeterHDD${drive_nb}Image]
 Meter=Image
 MeterStyle=MeterImageStyle
-LeftMouseDownAction=!Execute [\"#Disk${drive_nb}#:\\\"]
+LeftMouseDownAction=[\"#Disk${drive_nb}#:\\\"]
 Group=HDD${drive_nb}
 
 [MeterHDD${drive_nb}Label]
