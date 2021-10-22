@@ -20,13 +20,13 @@ fi
 ###            HEADER            ###
 ####################################
 echo "[Rainmeter]
-Author=Farigh
 Update=500
 Background=${theme_bg}
 BackgroundMode=3
 BackgroundMargins=24,24,14,21
 
 [Metadata]
+Author=Farigh
 Name=\"Drives infos\"
 Information=
 License=
